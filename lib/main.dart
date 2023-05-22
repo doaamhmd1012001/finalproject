@@ -98,10 +98,21 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            team_a_points++;
+                          });
+                        },
+                        child: Text('Add 1 Point',style: TextStyle(fontSize: 17),),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 42, 145, 209),
+                            foregroundColor: Color.fromARGB(255, 255, 255, 255),
+                            minimumSize: Size(130, 40)),
+                      ),
           ],
         ),
       ),
